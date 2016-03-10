@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+  <div class="container">
+
+    <h1>{{ title }}</h1>
+    <p>Welcome to {{ title }}</p>
+    <form action="/login" method="post">
+      Email:<br> <input name="email" type="email" required><br><br>
+      Password:<br> <input name="password" type="password" required><br><br>
+      <input class="btn btn-primary" type="submit" value="Login">
+    </form>
+    <p>Not registered?<a href="/register">Register here!</a></p>
+
+    {% if message.length %}
+      <p>Here's some text {{ message[0].message }}</p>
+    {% endif %}
+
+  </div>
+
+{% endblock %}
